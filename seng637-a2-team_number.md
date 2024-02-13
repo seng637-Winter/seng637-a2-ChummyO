@@ -4,10 +4,11 @@
 
 | Group \#:      |     |
 | -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+| Chioma Ukaegbu |     |
+| Taran Bains               |     |
+| Balkarn Gil               |     |
+| Hannah                |     |
+| Satchy                |     |
 
 # 1 Introduction
 
