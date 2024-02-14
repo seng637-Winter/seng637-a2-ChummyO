@@ -18,17 +18,17 @@ Text…
 
 // including the input partitions you have designed
 ## Range Class
-The test range of -50.0 to 60,0 will be used for most test cases. Depending on the test case, additional test ranges were created for more specific test case scenarios.
+The test range of -50.0 to 60.0 will be used for most test cases. This range was chosen because it has positive, negative and zero numbers, making it very robust. Depending on the test case, additional test ranges were created for more specific test case scenarios.
 
 #### **Table 1.** Boundary Value Testing - Domain Table for Range Class
 | Boundary Value (BVT) Notation      | Value      |
 |:----------------------------------:|:----------:|
 | BLB (value just below lower bound) | -50.00001 |
-| LB (lower bound)                   | -50       |
+| LB (lower bound)                   | -50.0       |
 | ALB (value just above lower bound) | -49.99999  |
 | Nominal Value(s)                   | -49 to 59  |
 | BUB (value just below upper bound) | 59.99999   |
-| UB (upper bound)                   |    60     |
+| UB (upper bound)                   |    60.0     |
 | AUB (value just above upper bound) | 60.00001  |
 
 
@@ -77,18 +77,18 @@ The test range of -50.0 to 60,0 will be used for most test cases. Depending on t
 #### **Table 6.** Range.intersects() Test Cases
 | Test Case Name                   | Input Value Partitions                                | Expected Value                  | Actual Value            | Outcome |
 |----------------------------------|-------------------------------------------------------|:-------------------------------:|:-----------------------:|:-------:|
-| intersectsWithBLBAndLB() | exampleRange: (-100, 100); value:  -100.00001, -100.0 | True | True | Pass|
-| intersectsWithBLBAndALB() | exampleRange: (-100, 100); value:  -100.00001, -99.99999 | True | True | Pass |
-| intersectsWithBLBAndAUB() | exampleRange: (-100, 100); value:  -100.00001, 100.00001 | True | True | Pass |
-| intersectsWithLBAndALB() | exampleRange: (-100, 100); value:  -100.0, -99.99999 | True | True | Pass |
-| intersectsWithLBAndUB() | exampleRange: (-100, 100); value:  -100.0, 100.0 | True | True | Pass |
-| intersectsWithNormalAndNormal() | exampleRange: (-100, 100); value:  -99, 99 | True | True | Pass |
-| intersectsWithBUBAndUB() | exampleRange: (-100, 100); value:  99.99999, 100.0 | True | False | Fail |
-| intersectsWithBUBAndAUB() | exampleRange: (-100, 100); value:  99.99999, 100.00001 | True | False | Fail |
-| intersectsWithUBAndAUB() | exampleRange: (-100, 100); value:  100.0, 100.00001 | True | False | Fail |
-| intersectsWithInputAUBAndMAX() | exampleRange: (-100, 100); value:  100.00001, Double.MAX_VALUE | False | False | Pass |
-| intersectsWithInputBLBAndMIN() | exampleRange: (-100, 100); value:  -999.00, -100.00001 | False | True | Fail |
-| intersectsWithInputNaNAnd1() | exampleRange: (-100, 100);value:  Double.NaN, 1 | False | False | Pass |
+| intersectsWithBLBAndLB() | exampleRange: (-50.0,60.0); value:  -50.00001, -50.0 | True | True | Pass|
+| intersectsWithBLBAndALB() | exampleRange: (-50.0,60.0); value:  -50.00001, -49.99999 | True | True | Pass |
+| intersectsWithBLBAndAUB() | exampleRange: (-50.0,60.0); value:  -50.00001, 60.00001 | True | True | Pass |
+| intersectsWithLBAndALB() | exampleRange: (-50.0,60.0); value:  -50.0, -49.99999 | True | True | Pass |
+| intersectsWithLBAndUB() | exampleRange: (-50.0,60.0); value:  -50.0, 60.0 | True | True | Pass |
+| intersectsWithNormalAndNormal() | exampleRange: (-50.0,60.0); value:  -49.0, 59.0 | True | True | Pass |
+| intersectsWithBUBAndUB() | exampleRange: (-50.0,60.0); value:  59.99999, 60.0 | True | False | Fail |
+| intersectsWithBUBAndAUB() | exampleRange: (-50.0,60.0); value:  59.99999, 60.00001 | True | False | Fail |
+| intersectsWithUBAndAUB() | exampleRange: (-50.0,60.0); value:  60.0, 60.00001 | True | False | Fail |
+| intersectsWithInputAUBAndMAX() | exampleRange: (-50.0,60.0); value:  60.00001, Double.MAX_VALUE | False | False | Pass |
+| intersectsWithInputBLBAndMIN() | exampleRange: (-50.0,60.0); value:  -999.00, -50.00001 | False | True | Fail |
+| intersectsWithInputNaNAnd1() | exampleRange: (-50.0,60.0); value:  Double.NaN, 1 | False | False | Pass |
 
 
 #### **Table 7.** Range.shift() Test Cases
