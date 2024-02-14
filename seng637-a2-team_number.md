@@ -63,13 +63,15 @@ The test range of -50.0 to 60,0 will be used for most test cases. Depending on t
 | containsValueEqualToBothLowerAndUpperBoundaries() | exampleRange: (11.0, 11.0); Value: 11.0               | True                            | True                    | Pass    |
 
 
-#### **Table 5.** Range.constrain() Test Cases
+#### **Table 5.** Range.combine() Test Cases
 | Test Case Name                   | Input Value Partitions                                | Expected Value                  | Actual Value            | Outcome |
 |----------------------------------|-------------------------------------------------------|:-------------------------------:|:-----------------------:|:-------:|
-| constrain_Should_Be_Max()        |exampleRange: (-100, 100); Value: 11 | 100 | 100 | Pass |
-| constrain_Should_Be_Input() | exampleRange: (-100, 100); Value: 1.4 | -1.4 | -1.4 | Pass |
-| constrain_Should_Be_Min() | exampleRange: (-100, 100); Value: -100.00001 | -100 | 0 | Fail |
-| constrain_Should_Be_Value() | exampleRange: (-100, 100); Value: ‘a’ | ‘a’ | ‘a’ | Pass |
+| testCombineBothNull()            | Range 1: null; Range 2: null                          | null                            | null                    | Pass    |
+| testCombineRange1Null()          | Range 1: (-50.0,60.0); Range 2: null                  | (-50.0,60.0)                    | (-50.0,60.0)            | Pass    |
+| testCombineBothNotNull           | Range 1: (1.0, 5.0); Range 2: (3.0, 8.0)              | (1.0, 8.0)                      | IllegalArgumentException | Fail   |
+| testCombineEmptyRanges()         | Range 1: (5.0, 5.0); Range 2: (5.0, 5.0)              | (5.0, 5.0)                      | (5.0, 5.0)              | Pass    |
+| testCombineOneInsideOther()      | Range 1: (1.0, 10.0); Range 2: (3.0, 8.0)             | (1.0, 10.0)                     | IllegalArgumentException | Fail  |
+| testCombineTouchingRanges()      | Range 1: (1.0, 5.0); Range 2: (5.0, 10.0)             | (1.0, 10.0)                     | IllegalArgumentException | Fail    |
 
 
 #### **Table 6.** Range.intersects() Test Cases
