@@ -94,14 +94,14 @@ The test range of -50.0 to 60.0 will be used for most test cases. This range was
 #### **Table 7.** Range.shift() Test Cases
 | Test Case Name                   | Input Value Partitions                                | Expected Value                  | Actual Value            | Outcome |
 |----------------------------------|-------------------------------------------------------|:-------------------------------:|:-----------------------:|:-------:|
-| positiveShiftRangeRight() | exampleRange: (-100, 100); delta: 50.0 | (-50,150) | (-50,150) | Pass |
-| negativeShiftRangeLeft() | exampleRange: (-100, 100); delta: -75.0 | (-175, 25) | (-175, 25) | Pass |
-| zeroDeltaNoShiftRange() | exampleRange: (-100, 100); delta: 0.0 | (-100,100) | (-100,100) | Pass |
-| positiveShiftLbZeroCrossing()| exampleRange: (-100, 100); delta: 100.00001 | (0.0, 200.00001) | (0.0,0.0) | Fail |
-| positiveShiftLbAndUbZeroCrossing() | exampleRange: (-100, -50); delta: 100.00001 | (0.0, 0.0) | (1.0000000003174137E-5, 1.0000000003174137E-5) | Fail |
-| negativeShiftUbZeroCrossing() | exampleRange: (100, 150); delta: -100.00001 | (0.0, 49.99999) | [-1.0000000003174137E-5, -1.0000000003174137E-5] | Fail |
-| negativeShiftLbAndUbZeroCrossing() | exampleRange: (50, 100); delta: -100.00001 | (50, 100) | [-1.0000000003174137E-5, -1.0000000003174137E-5] | Fail |
-| nullBaseInvalidParameterException() | exampleRange: (50, 100); delta: -100.00001 | InvalidParameterException | NullPointerException | Fail |
+| positiveShiftRangeRight() | exampleRange: (-50.0,60.0); delta: 50.0 | (0.0,110.0) | (0.0,110.0) | Pass |
+| negativeShiftRangeLeft() | exampleRange: (-50.0,60.0); delta: -25.0 | (-75.0, 35.0) | (-75.0, 35.0) | Pass |
+| zeroDeltaNoShiftRange() | exampleRange: (-50.0,60.0); delta: 0.0 | (-50.0,60.0) | (-50.0,60.0) | Pass |
+| positiveShiftLbZeroCrossing()| exampleRange: (-50.0,60.0); delta: 50.00001 | (0.0, 110.00001) | [1.0000000003174137E-5, 1.0000000003174137E-5] | Fail |
+| positiveShiftLbAndUbZeroCrossing() | exampleRange: (-50.0,60.0); delta: 50.00001 | (0.0, 0.0) | [1.0000000003174137E-5, 1.0000000003174137E-5] | Fail |
+| negativeShiftUbZeroCrossing() | exampleRange: (-50.0,60.0); delta: -50.00001 | (0.0, 99.99999) | [-1.0000000003174137E-5, -1.0000000003174137E-5] | Fail |
+| negativeShiftLbAndUbZeroCrossing() | exampleRange: (-50.0,60.0); delta: -100.00001 | (0.0, 0.0) | [-50.00001,-50.00001]  | Fail |
+| nullBaseInvalidParameterException() | exampleRange: (-50.0,60.0); delta: 10.0 | InvalidParameterException | NullPointerException | Fail |
 
 # 4 How the team work/effort was divided and managed
 
