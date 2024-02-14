@@ -53,14 +53,14 @@ The test range of -50.0 to 60,0 will be used for most test cases. Depending on t
 | containsValueJustBelowLowerBound()                | exampleRange: (-50.0,60.0); Value: -50.00001          | False                           | False                   | Pass    |
 | containsLowerBound()                              | exampleRange: (-50.0,60.0); Value: -50.0              | True                            | True                    | Pass    |
 | containsValueJustAboveLowerBound()                | exampleRange: (-50.0,60.0); Value: -49.99999          | True                            | True                    | Pass    |
-| containsNominalValue()                            | exampleRange: (-50.0,60.0); Value: 50                  | True                            | True                    | Pass    |
-| containsValueJustBelowUpperBound()                | exampleRange: (-50.0,60.0); Value: 99.99999            | True                            | True                    | Pass    |
-| containsUpperBound()                              | exampleRange: (-50.0,60.0); Value: 100                  | True                            | True                    | Pass    |
-| containsValueJustAboveUpperBound()                | exampleRange: (-50.0,60.0); Value: 100.00001           | False                           | False                   | Pass    |
-| containsNotANumber()                              | exampleRange: (-50.0,60.0); Value: NaN                 | False                           | False                   | Pass    |
-| containsACharacter()                              | exampleRange: (-50.0,60.0); Value: ‘n’                 | False                           | False                   | Pass    |
-| containsValueInRangeWithNegativeBoundaries()      | exampleRange: (-10, -5); Value: -7                    | True                            | True                    | Pass    |
-| containsValueEqualToBothLowerAndUpperBoundaries() | exampleRange: (-5, 5); Value: 5                       | True                            | True                    | Pass    |
+| containsNominalValue()                            | exampleRange: (-50.0,60.0); Value: 0                  | True                            | True                    | Pass    |
+| containsValueJustBelowUpperBound()                | exampleRange: (-50.0,60.0); Value: 59.99999           | True                            | True                    | Pass    |
+| containsUpperBound()                              | exampleRange: (-50.0,60.0); Value: 60.0               | True                            | True                    | Pass    |
+| containsValueJustAboveUpperBound()                | exampleRange: (-50.0,60.0); Value: 60.00001           | False                           | False                   | Pass    |
+| containsNotANumber()                              | exampleRange: (-50.0,60.0); Value: Double.NaN         | False                           | False                   | Pass    |
+| containsACharacter()                              | exampleRange: (-50.0,60.0); Value: ‘%’                | False                           | True                    | Fail    |
+| containsValueInRangeWithNegativeBoundaries()      | exampleRange: (-20.0, -10.0); Value: -13.0            | True                            | True                    | Pass    |
+| containsValueEqualToBothLowerAndUpperBoundaries() | exampleRange: (11.0, 11.0); Value: 11.0               | True                            | True                    | Pass    |
 
 
 #### **Table 5.** Range.constrain() Test Cases
