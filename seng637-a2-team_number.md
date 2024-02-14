@@ -18,7 +18,7 @@ Text…
 
 // including the input partitions you have designed
 ## Range Class
-The test range of -50 and 60 will be used for most test cases. Depending on the test case, additional test ranges were created for more specific test case scenarios.
+The test range of -50.0 to 60,0 will be used for most test cases. Depending on the test case, additional test ranges were created for more specific test case scenarios.
 
 #### **Table 1.** Boundary Value Testing - Domain Table for Range Class
 | Boundary Value (BVT) Notation      | Value      |
@@ -31,39 +31,20 @@ The test range of -50 and 60 will be used for most test cases. Depending on the 
 | UB (upper bound)                   |    60     |
 | AUB (value just above upper bound) | 60.00001  |
 
-## DataUtilities Class
-The test range for most DataUtilities test cases will be primarily based on the number of dimensions that the mocked Values2D matrix will have. Depending on the test case, additional test criteria can be created for more specific test case scenarios. It is important to note that it will not be possible to test a method for some boundary values (for example, a Values 2D matrix cannot have a dimension of 0 or -1).
-
-#### **Table 2.** Boundary Value Testing - Domain Table for DataUtilities Class
-| Boundary Value (BVT) Notation      | Value                                        |
-|:----------------------------------:|:--------------------------------------------:|
-| BLB (value just below lower bound) | -1                                           |
-| LB (lower bound)                   | 0                                            |
-| ALB (value just above lower bound) | 1                                            |
-| Nominal Value(s)                   | Any value between(but not including) 0 And 2 |
-| BUB (value just below upper bound) | 1                                            |
-| UB (upper bound)                   | 2                                            |
-| AUB (value just above upper bound) | 3                                            |
-
-
-# 3 Test cases developed
-
-# 3 Test cases developed
-
-Each team member wrote their test cases as described in Tables 3-12.
 
 #### **Table 3.** Range.expandToInclude() Test Cases
 | Test Case Name                   | Input Value Partitions                                | Expected Value                  | Actual Value            | Outcome |
 |----------------------------------|-------------------------------------------------------|:-------------------------------:|:-----------------------:|:-------:|
-| expandToIncludeBelowLowerBound() | Input range:(-100,100); Input value: -100.00001       | (-5.000000001587068E-6., 100.0) | (-100.00001,100.0)      | Fail    |
-| expandToIncludeLowerBound()      | Input range:(-100,100); Input value: -100.0           | (-100,100)                      | Exception               | Fail    |
-| expandToIncludeNominalValue()    | Input Range:(-100,100); Input value: 10.0             | (-100,100)                      | (-100,100)              | Pass    |
-| expandToIncludeBelowUpperBound() | Input Range:(-100,100); Input value: 99.99999         | (-100,100)                      | (-100,100)              | Pass    |
-| expandToIncludeUpperBound()      | Input Range:(-100,100); Input value: 100.0            | (-100,100)                      | (-100,100)              | Pass    |
-| expandToIncludeAboveUpperBound() | Input Range:(-100,100); Input value: 100.00001        | (-100,100.00001)                | (-100,100.00001)        | Pass    |
-| expandToIncludeMaxValue()        | Input Range:(-100,100); Input value: Double.MAX_VALUE | (-100,Double.MAX_VALUE)         | (-100,Double.MAX_VALUE) | Pass    |
-| expandToIncludeMinValue()        | Input Range:(-100,100); Input value: Double.MIN_VALUE | (-100,Double.MIN_VALUE)         | (-100,Double.MIN_VALUE) | Pass    |
-| expandToIncludeNullRange()       | Input Range: (20,20); Input value: null               | (20,20)                         | (20,20)                 | Pass    |
+| expandToIncludeBelowLowerBound() | Input range:(-50.00001,60.0); Input value: -50.00001  | (-50.00001, 60.0)               | (-50.0,-50.0)           | Fail    |
+| expandToIncludeLowerBound()      | Input range:(-50.0,60.0); Input value: -50.0          | (-50.0,60.0)                    | IllegalArgumentException | Fail    |
+| expandToIncludeAboveLowerBound() | Input range:(-50.0,60.0); Input value: -49.99999      | (-50.0,60.0)                    | (-50.0,60.0)            | Pass    |
+| expandToIncludeNominalValue()    | Input Range:(-50.0,60.0); Input value: 20.0           | (-50.0,60.0)                    | (-50.0,60.0)            | Pass    |
+| expandToIncludeBelowUpperBound() | Input Range:(-50.0,60.0); Input value: 59.99999       | (-50.0,60.0)                    | (-50.0,60.0)            | Pass    |
+| expandToIncludeUpperBound()      | Input Range:(-50.0,60.0); Input value: 60.0           | (-50.0,60.0)                    | (-50.0,60.0)            | Pass    |
+| expandToIncludeAboveUpperBound() | Input Range:(-50.0,60.0); Input value: 60.00001       | (-50.0,60.00001)                | (-50.0,60.00001)        | Pass    |
+| expandToIncludeMaxValue()        | Input Range:(-50.0,60.0); Input value: Double.MAX_VALUE | (-50.0,Double.MAX_VALUE)      | (-50.0,Double.MAX_VALUE) | Pass    |
+| expandToIncludeMinValue()        | Input Range:(-50.0,60.0); Input value: Double.MIN_VALUE | (-50.0,Double.MIN_VALUE)      | (-50.0,Double.MIN_VALUE) | Pass    |
+| expandToIncludeNullRange()       | Input Range: (15.0,15.0); Input value: null           | (15.0,15.0)                     | (15.0,15.0)             | Pass    |
 
 
 #### **Table 4.** Range.contains() Test Cases
